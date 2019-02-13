@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="排序,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这两天集训了，想着不能再颓了，总得做些有意义的事。于是重新配置一下许久没有动过的博客，摸摸鱼 好好复习一下之前学过的东西。 闲话少说，进入正题。 快速排序 基本思想 快速排序采用的是一种分治的思想。它将待排序序列分成两个子序列。 具体步骤：1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵”（也就是在代码中看到名为”pivot”的东西） 2.将所有比基准值小的元素挪到基准前面，比基准大的">
+<meta name="keywords" content="排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈算法之快速排序">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/浅谈算法之快速排序/index.html">
+<meta property="og:site_name" content="JuicyMio&#39;s Blog">
+<meta property="og:description" content="这两天集训了，想着不能再颓了，总得做些有意义的事。于是重新配置一下许久没有动过的博客，摸摸鱼 好好复习一下之前学过的东西。 闲话少说，进入正题。 快速排序 基本思想 快速排序采用的是一种分治的思想。它将待排序序列分成两个子序列。 具体步骤：1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵”（也就是在代码中看到名为”pivot”的东西） 2.将所有比基准值小的元素挪到基准前面，比基准大的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax2x.com/2018/07/19/wXmEi.jpg">
+<meta property="og:updated_time" content="2018-07-21T09:12:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈算法之快速排序">
+<meta name="twitter:description" content="这两天集训了，想着不能再颓了，总得做些有意义的事。于是重新配置一下许久没有动过的博客，摸摸鱼 好好复习一下之前学过的东西。 闲话少说，进入正题。 快速排序 基本思想 快速排序采用的是一种分治的思想。它将待排序序列分成两个子序列。 具体步骤：1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵”（也就是在代码中看到名为”pivot”的东西） 2.将所有比基准值小的元素挪到基准前面，比基准大的">
+<meta name="twitter:image" content="https://s1.ax2x.com/2018/07/19/wXmEi.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/19/浅谈算法之快速排序/">
+
+
+
+
+
+  <title>浅谈算法之快速排序 | JuicyMio's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JuicyMio's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-links"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/浅谈算法之快速排序/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JuicyMio">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JuicyMio's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浅谈算法之快速排序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-19T20:09:04+08:00">
+                2018-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这两天集训了，想着不能再颓了，总得做些有意义的事。<br><br>于是重新配置一下许久没有动过的博客，<del>摸摸鱼</del> 好好复习一下之前学过的东西。</p>
+<p>闲话少说，进入正题。</p>
+<p><strong>快速排序</strong></p>
+<p><strong><em>基本思想</em></strong></p>
+<p>快速排序采用的是一种分治的思想。<br>它将待排序序列分成两个子序列。</p>
+<p><strong><em>具体步骤</em></strong>：<br>1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵”（也就是在代码中看到名为”pivot”的东西）</p>
+<p>2.将所有比基准值小的元素挪到基准前面，比基准大的挪到基准后面。那等于基准的呢？放在任意一边。</p>
+<p>3.递归地将两个子序列再次排序。</p>
+<p>有人问，这样什么时候结束呢？</p>
+<p>递归到最底部的时候，子序列一定会被分成长度为0或1的序列，显然也就是排序好了。并且它一定会结束，因为每次迭代至少有一个元素到达了它最终的位置（就是可爱的哨兵啊）。</p>
+<p>以上内容参考<a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" title="快速排序-维基百科" target="_blank" rel="noopener">快速排序-维基百科</a></p>
+<p>放一张图，更方便大家理解<br><img src="https://s1.ax2x.com/2018/07/19/wXmEi.jpg" alt="quicksort"><br>(图片转自<a href="http://www.cnblogs.com/CBDoctor/p/4077574.html" target="_blank" rel="noopener">http://www.cnblogs.com/CBDoctor/p/4077574.html</a>)</p>
+<p><strong><em>实现方式</em></strong></p>
+<p>然后接下来拿出我<del>丑的可怕</del>的代码，来学习一下快排的具体实现方式（其实有很多种实现方法，在此只举一个例子）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span><span class="comment">//left，right代表的是待排序的区间</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = left, j = right;</span><br><span class="line">    <span class="keyword">int</span> mid = arr[(i+j)/<span class="number">2</span>];<span class="comment">//这就是pivot，建议随机一个以免被卡（其实并不会怎样）</span></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= j) <span class="comment">//这个while循环实现的是从哨兵左边找一个比哨兵大的数，从哨兵右边找一个比它小的数，若i，j未相遇则交换这两个值，直到i，j相遇</span></span><br><span class="line">	&#123;</span><br><span class="line">        <span class="keyword">while</span>(arr[i] &lt; mid) </span><br><span class="line">		i ++;</span><br><span class="line">        <span class="keyword">while</span>(arr[j] &gt; mid) </span><br><span class="line">		j --;</span><br><span class="line">        <span class="keyword">if</span>(i &lt;= j)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp;</span><br><span class="line">            tmp = arr[i];</span><br><span class="line">			arr[i] = arr[j];</span><br><span class="line">			arr[j] = tmp;</span><br><span class="line">            i ++;</span><br><span class="line">			j --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; right)<span class="comment">//只要哨兵右边还有数，就递归继续进行排序</span></span><br><span class="line">	quickSort(i, right);</span><br><span class="line">    <span class="keyword">if</span>(left &lt; j)<span class="comment">//只要哨兵左边还有数，就递归继续进行排序</span></span><br><span class="line">	quickSort(left, j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>快速排序的优缺点</strong><br>优点： 非常快速（在O（N*logN）的排序中常数小），为原址排序（不需要像归并一样的额外辅助空间）<br>缺点：不稳定</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/排序/" rel="tag"># 排序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/21/浅谈算法之递归/" rel="prev" title="浅谈算法之递归">
+                浅谈算法之递归 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">JuicyMio</p>
+              <p class="site-description motion-element" itemprop="description">比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JuicyMio</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

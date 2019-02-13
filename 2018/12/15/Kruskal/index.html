@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="最小生成树 Kruskal,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Kruskal是一种被广泛使用的最小生成树算法，其实质为一种贪心算法。相比Prim来说，比较好写，用的人也比较多。首先我们需要知道最小生成树是个什么东西。 最小生成树严格定义可以自己百度，通俗来讲就是连通所有节点的总权值最小的树，或者说所有边权和最小的生成树，所以“最小生成树”应是“最小权重生成树”的简称。显然，非连通图中是没有最小生成树的。 算法过程将边按边权从小到大排序，从权值最小的边开始，依">
+<meta name="keywords" content="最小生成树 Kruskal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈算法之Kruskal">
+<meta property="og:url" content="http://yoursite.com/2018/12/15/Kruskal/index.html">
+<meta property="og:site_name" content="JuicyMio&#39;s Blog">
+<meta property="og:description" content="Kruskal是一种被广泛使用的最小生成树算法，其实质为一种贪心算法。相比Prim来说，比较好写，用的人也比较多。首先我们需要知道最小生成树是个什么东西。 最小生成树严格定义可以自己百度，通俗来讲就是连通所有节点的总权值最小的树，或者说所有边权和最小的生成树，所以“最小生成树”应是“最小权重生成树”的简称。显然，非连通图中是没有最小生成树的。 算法过程将边按边权从小到大排序，从权值最小的边开始，依">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-15T09:28:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈算法之Kruskal">
+<meta name="twitter:description" content="Kruskal是一种被广泛使用的最小生成树算法，其实质为一种贪心算法。相比Prim来说，比较好写，用的人也比较多。首先我们需要知道最小生成树是个什么东西。 最小生成树严格定义可以自己百度，通俗来讲就是连通所有节点的总权值最小的树，或者说所有边权和最小的生成树，所以“最小生成树”应是“最小权重生成树”的简称。显然，非连通图中是没有最小生成树的。 算法过程将边按边权从小到大排序，从权值最小的边开始，依">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/15/Kruskal/">
+
+
+
+
+
+  <title>浅谈算法之Kruskal | JuicyMio's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JuicyMio's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-links"></i> <br>
+            
+            links
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/Kruskal/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JuicyMio">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JuicyMio's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浅谈算法之Kruskal</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-15T17:13:00+08:00">
+                2018-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Kruskal是一种被广泛使用的最小生成树算法，其实质为一种贪心算法。相比Prim来说，比较好写，用的人也比较多。<br>首先我们需要知道最小生成树是个什么东西。</p>
+<p>最小生成树<br>严格定义可以自己百度，通俗来讲就是连通所有节点的总权值最小的树，或者说所有边权和最小的生成树，所以“最小生成树”应是“最小权重生成树”的简称。<br>显然，非连通图中是没有最小生成树的。</p>
+<p>算法过程<br>将边按边权从小到大排序，从权值最小的边开始，依次将边加入，如果某条边所连接的两个点已经连通，也就是加入该边后会形成环，则跳过这条边，直至加入(结点数-1)条边。</p>
+<p>算法证明<br>首先感性理解下，在两个点已经连通的情况下，再加入连接这两条边的点的唯一作用就是凭空增加边权，所以不需要加该边。</p>
+<blockquote>
+<p>证明：使用归纳法，证明任何时候 K 算法选择的边集都被某棵 MST 所包含。</p>
+<p>基础：对于算法刚开始时，显然成立（最小生成树存在）。</p>
+<p>归纳：假设某时刻成立，当前边集为 $F$，令 $T$ 为这棵 MST，考虑下一条加入的边 $e$。</p>
+<p>如果 $e$ 属于 $T$，那么成立。</p>
+<p>否则，$T+e$ 一定存在一个环，考虑这个环上不属于 $F$ 的另一条边 $f$（一定只有一条）。</p>
+<p>首先，$f$ 的权值一定不会比 $e$ 小，不然 $f$ 会在 $e$ 之前被选取。</p>
+<p>然后，$f$ 的权值一定不会比 $e$ 大，不然 $T+e-f$ 就是一棵比 $T$ 还优的生成树了。</p>
+<p>所以，$T+e-f$ 包含了 $F$，并且也是一棵最小生成树，归纳成立。</p>
+</blockquote>
+<p>引用内容摘自OI-wiki</p>
+<p>算法具体实现<br>根据上述过程，我们可以知道，需要的操作有判断两个点是否连通，朴素做法为O(n^2)的BFS，显然过慢。而且还需要连边，于是我们就想到了一个数据结构：并查集<br>通过并查集，就可以做到查询两个点是否在同一棵树中和连接两棵树这些操作了。 </p>
+<ol>
+<li>读入后，对边按边权从小到大进行排序，下面代码中用的是结构体快排。 </li>
+<li>遍历排序后存边的数组，如果目前考虑的边的两个结点已经连通（处于同一个集合里），则跳过这条边考虑下一条。否则将这条边加入已选边中（即为将这条边的两个结点所在集合合并）。 </li>
+<li>当选择（结点数-1）条边时结束，此时已选边集合内为一颗最小生成树。 </li>
+<li>如果有空我会补图（我会持续咕咕咕的。</li>
+</ol>
+<p>代码<br>(直接把我LuoguP3366的AC代码拿过来了。</p>
+<p>#include<cstdio></cstdio></p>
+<p>#include<algorithm><br>using std::sort;<br>const int MAXN = 5000 + 10;<br>const int MAXM = 200000 + 10;<br>struct edge<br>{<br>    int u,v,w;//u,v是两个点，w是边权<br>};edge E[MAXM];<br>bool cmpe(edge a,edge b)<br>{<br>    return a.w &lt; b.w;<br>}<br>int n,m,tot;<br>int uset[MAXN];<br>void makeSet(int n)<br>{<br>    for(int i = 1;i &lt;= n;i ++)<br>        uset[i] = i;<br>    return;<br>}<br>int find(int x)<br>{<br>    if(uset[x] != x)<br>        uset[x] = find(uset[x]);<br>    return uset[x];<br>}<br>void unionSet(int x,int y)<br>{<br>    x = find(x),y = find(y);<br>    uset[y] = x;<br>}<br>void kruskal(int i,int num)<br>{<br>    if(num == n-1)<br>        return;<br>    if(i &gt; m)<br>    {<br>        tot = -1;<br>        return;<br>    }<br>    if(find(E[i].u) == find(E[i].v))<br>    {<br>        kruskal(i+1,num);<br>        return;<br>    }<br>    else<br>    {<br>        unionSet(E[i].u,E[i].v);<br>        tot += E[i].w;<br>        kruskal(i+1,num+1);<br>    }<br>    return;<br>}<br>int main()<br>{<br>    scanf(“%d%d”,&amp;n,&amp;m);<br>    makeSet(n);<br>    for(int i = 1;i &lt;= m;i ++)<br>    {<br>        scanf(“%d%d%d”,&amp;E[i].u,&amp;E[i].v,&amp;E[i].w);<br>    }<br>    sort(E+1,E+m+1,cmpe);<br>    kruskal(1,0);<br>    if(tot == -1)<br>    printf(“orz”);<br>    else<br>    printf(“%d”,tot);<br>    return 0;<br>}</algorithm></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/最小生成树-Kruskal/" rel="tag"># 最小生成树 Kruskal</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/29/Unity学习心得/" rel="next" title="Unity学习心得">
+                <i class="fa fa-chevron-left"></i> Unity学习心得
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/30/Dijkstra/" rel="prev" title="浅谈算法之Dijkstra">
+                浅谈算法之Dijkstra <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">JuicyMio</p>
+              <p class="site-description motion-element" itemprop="description">比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JuicyMio</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
