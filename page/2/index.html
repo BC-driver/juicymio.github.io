@@ -203,7 +203,7 @@
         <li class="menu-item menu-item-links">
           <a href="/links/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-links"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
             
             links
           </a>
@@ -238,141 +238,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/21/浅谈算法之递归/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JuicyMio">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JuicyMio's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/21/浅谈算法之递归/" itemprop="url">浅谈算法之递归</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-21T17:24:26+08:00">
-                2018-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>燥热的夏天几乎使我迷失了方向</p>
-<p>这次的博客介绍的是基础算法“递归”，递归是算法竞赛中非常常用的基础技巧（<del>暴搜骗分好啊</del>），也是许多高级算法的基础。所以一定要从原理到编写方式熟练掌握。</p>
-<p>然而递归的编写方式令人难以理解，可以说是初学者的第一道坎了。（笔者本人也在此研究了很久）。</p>
-<p><strong>递归的定义：函数自己调用自己</strong></p>
-<p><strong>笔者对递归的浅显理解： 通过把上一次的输出（进行一定处理）作为下一次的输入，重复做同一件事。不断缩小问题的规模，最终求得结果</strong></p>
-<p>递归分为尾部递归（也称尾递归）和普通递归(也称中间递归），那么他们有什么区别呢</p>
-<h3 id="尾部递归"><a href="#尾部递归" class="headerlink" title="尾部递归"></a>尾部递归</h3><p>我来讲个故事吧</p>
-<p>从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：从前有座山……</p>
-<p>那为什么称之为尾部递归呢？因为在代码中，递归位于函数的尾部，也就是说下一个函数不再需要上一个函数的环境了，得出结果后会直接返回。</p>
-<h3 id="中部递归"><a href="#中部递归" class="headerlink" title="中部递归"></a>中部递归</h3><p>我再讲个故事</p>
-<p>从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：……<br>小和尚受不了，跑了。</p>
-<p>这就是中部递归，递归位于函数的中部，函数返回后需要继续处理。</p>
-<p>笔者主观认为中部递归更难理解些，因此建议大家反复看看这个故事（其实没什么用），并找找其他的博客看看有什么能启发到自己的东西。</p>
-<p>（需要说明的是，以上两个故事可能不是很严谨的递归，但是帮助理解足够了。）</p>
-<h3 id="递归的特点"><a href="#递归的特点" class="headerlink" title="递归的特点"></a>递归的特点</h3><p>优点是：逻辑简单清晰，代码可读性强<br>缺点是：过深的调用会导致爆栈</p>
-<p>（本文配合搜索食用更佳）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
       
 
@@ -458,24 +323,20 @@
       
         
           
-            <p>这两天集训了，想着不能再颓了，总得做些有意义的事。<br><br>于是重新配置一下许久没有动过的博客，<del>摸摸鱼</del> 好好复习一下之前学过的东西。</p>
-<p>闲话少说，进入正题。</p>
-<p><strong>快速排序</strong></p>
-<p><strong><em>基本思想</em></strong></p>
-<p>快速排序采用的是一种分治的思想。<br>它将待排序序列分成两个子序列。</p>
-<p><strong><em>具体步骤</em></strong>：<br>1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵”（也就是在代码中看到名为”pivot”的东西）</p>
-<p>2.将所有比基准值小的元素挪到基准前面，比基准大的挪到基准后面。那等于基准的呢？放在任意一边。</p>
-<p>3.递归地将两个子序列再次排序。</p>
-<p>有人问，这样什么时候结束呢？</p>
-<p>递归到最底部的时候，子序列一定会被分成长度为0或1的序列，显然也就是排序好了。并且它一定会结束，因为每次迭代至少有一个元素到达了它最终的位置（就是可爱的哨兵啊）。</p>
-<p>以上内容参考<a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" title="快速排序-维基百科" target="_blank" rel="noopener">快速排序-维基百科</a></p>
-<p>放一张图，更方便大家理解<br><img src="https://s1.ax2x.com/2018/07/19/wXmEi.jpg" alt="quicksort"><br>(图片转自<a href="http://www.cnblogs.com/CBDoctor/p/4077574.html" target="_blank" rel="noopener">http://www.cnblogs.com/CBDoctor/p/4077574.html</a>)</p>
-<p><strong><em>实现方式</em></strong></p>
-<p>然后接下来拿出我<del>丑的可怕</del>的代码，来学习一下快排的具体实现方式（其实有很多种实现方法，在此只举一个例子）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span><span class="comment">//left，right代表的是待排序的区间</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = left, j = right;</span><br><span class="line">    <span class="keyword">int</span> mid = arr[(i+j)/<span class="number">2</span>];<span class="comment">//这就是pivot，建议随机一个以免被卡（其实并不会怎样）</span></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= j) <span class="comment">//这个while循环实现的是从哨兵左边找一个比哨兵大的数，从哨兵右边找一个比它小的数，若i，j未相遇则交换这两个值，直到i，j相遇</span></span><br><span class="line">	&#123;</span><br><span class="line">        <span class="keyword">while</span>(arr[i] &lt; mid) </span><br><span class="line">		i ++;</span><br><span class="line">        <span class="keyword">while</span>(arr[j] &gt; mid) </span><br><span class="line">		j --;</span><br><span class="line">        <span class="keyword">if</span>(i &lt;= j)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp;</span><br><span class="line">            tmp = arr[i];</span><br><span class="line">			arr[i] = arr[j];</span><br><span class="line">			arr[j] = tmp;</span><br><span class="line">            i ++;</span><br><span class="line">			j --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; right)<span class="comment">//只要哨兵右边还有数，就递归继续进行排序</span></span><br><span class="line">	quickSort(i, right);</span><br><span class="line">    <span class="keyword">if</span>(left &lt; j)<span class="comment">//只要哨兵左边还有数，就递归继续进行排序</span></span><br><span class="line">	quickSort(left, j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>快速排序的优缺点</strong><br>优点： 非常快速（在O（N*logN）的排序中常数小），为原址排序（不需要像归并一样的额外辅助空间）<br>缺点：不稳定</p>
-
-          
+          这两天集训了，想着不能再颓了，总得做些有意义的事。于是重新配置一下许久没有动过的博客，摸摸鱼 好好复习一下之前学过的东西。
+闲话少说，进入正题。
+快速排序
+基本思想
+快速排序采用的是一种分治的思想。它将待排序序列分成两个子序列。
+具体步骤：1.从数列中挑出一个元素，称为基准，也可以形象地称它作“哨兵
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/19/浅谈算法之快速排序/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -559,7 +420,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
