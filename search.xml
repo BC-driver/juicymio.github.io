@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[线性代数学习笔记]]></title>
     <url>%2F2019%2F10%2F04%2F%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[向量(vector)2019.10.4 表示方式 几何表示：具有方向的线段叫做有向线段，向量为有向线段（在线性代数中，通常以原点为起点） $ \vec u=\begin{bmatrix}2 \3 \\end{bmatrix} $ 表示为图中箭头 坐标表示：有序的数字列表 \begin{bmatrix}a \\b \\\end{bmatrix}​ 如上二维向量代表由原点指向 (a,b) 的箭头，也就是从原点在x轴移动a“步”,再在y轴移动b“步”。多维同理 基础运算向量加法(vector addition) 三角形法则 将一个向量的起点移到另一个向量的终点，这两个向量的和为后者的起点指向前者的终点 ，多个向量同理 $ \vec u+\vec v=\vec w $ 所以 \begin{bmatrix}a \\b \\\end{bmatrix}+\begin{bmatrix}c \\d \\\end{bmatrix}=\begin{bmatrix}a+c \\b+d \\\end{bmatrix}相当于先在x轴移动 a+c “步”，再在y轴移动 b+d “步”，效果等同于在x轴移动 a “步”，在y轴移动 b “步”，再在x轴移动 c “步”，在y轴移动 d “步”。 向量数乘(vector multiplication by a number)对向量的缩放,用于控制缩放的量称为标量(scalar)，在这里通常可与数字(number)互相替换。 x\cdot\begin{bmatrix}a \\b \\\end{bmatrix} =\begin{bmatrix}xa \\xb\end{bmatrix}]]></content>
+    <content type="text"><![CDATA[向量(vector)2019.10.4 表示方式 几何表示：具有方向的线段叫做有向线段，向量为有向线段（在线性代数中，通常以原点为起点） $ \vec u=\begin{bmatrix}2 \\3 \\\end{bmatrix} $ 表示为图中箭头 坐标表示：有序的数字列表 \begin{bmatrix}a \\b \\\end{bmatrix}​ 如上二维向量代表由原点指向 (a,b) 的箭头，也就是从原点在x轴移动a“步”,再在y轴移动b“步”。多维同理 基础运算向量加法(vector addition) 三角形法则 将一个向量的起点移到另一个向量的终点，这两个向量的和为后者的起点指向前者的终点 ，多个向量同理 $ \vec u+\vec v=\vec w $ 所以 \begin{bmatrix}a \\b \\\end{bmatrix}+\begin{bmatrix}c \\d \\\end{bmatrix}=\begin{bmatrix}a+c \\b+d \\\end{bmatrix}相当于先在x轴移动 a+c “步”，再在y轴移动 b+d “步”，效果等同于在x轴移动 a “步”，在y轴移动 b “步”，再在x轴移动 c “步”，在y轴移动 d “步”。 向量数乘(vector multiplication by a number)对向量的缩放,用于控制缩放的量称为标量(scalar)，在这里通常可与数字(number)互相替换。 x\cdot\begin{bmatrix}a \\b \\\end{bmatrix} =\begin{bmatrix}xa \\xb\end{bmatrix}]]></content>
   </entry>
   <entry>
     <title><![CDATA[树状数组]]></title>
