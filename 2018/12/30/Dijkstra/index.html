@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
+<meta name="description" content="Dijkstra算法是典型的单源最短路径算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。   算法主要思路取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$   易知初始时$S$中只有一个元素$s$，$dis[">
 <meta name="keywords" content="Dijkstra,最短路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈算法之Dijkstra">
 <meta property="og:url" content="http://yoursite.com/2018/12/30/Dijkstra/index.html">
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
-<meta property="og:description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
+<meta property="og:description" content="Dijkstra算法是典型的单源最短路径算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。   算法主要思路取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$   易知初始时$S$中只有一个元素$s$，$dis[">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-04T14:46:47.570Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/13/htoBjFzKGVnyw6D.png">
+<meta property="og:updated_time" content="2019-10-13T14:07:27.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈算法之Dijkstra">
-<meta name="twitter:description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
+<meta name="twitter:description" content="Dijkstra算法是典型的单源最短路径算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。   算法主要思路取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$   易知初始时$S$中只有一个元素$s$，$dis[">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/13/htoBjFzKGVnyw6D.png">
 
 
 
@@ -340,8 +342,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-04T22:46:47+08:00">
-                2019-10-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-13T22:07:27+08:00">
+                2019-10-13
               </time>
             
           </span>
@@ -368,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  665
                 </span>
               
 
@@ -393,7 +395,20 @@
       
 
       
-        
+        <p>Dijkstra算法是典型的<strong>单源最短路径</strong>算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。  </p>
+<h2 id="算法主要思路"><a href="#算法主要思路" class="headerlink" title="算法主要思路"></a>算法主要思路</h2><p>取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$  </p>
+<p>易知初始时$S$中只有一个元素$s$，$dis[s]=0$，其余节点均在$U$中，$U$中与$s$相邻的节点到$s$的距离为边权，与$s$不相邻的节点到s的距离未知，视为$+\infty$。  </p>
+<p>此时从$U$中找到$dis[k]$最小的节点$k$，显然$k$的最短路径已求出，则将$k$从$U$中移到$S$中。  </p>
+<p>于是可以用$k$更新$U$中节点距离，由于与$k$相邻且不与$s$相邻的其它节点距离均为$+\infty$，故能更新。(实际实现中，称为松弛)</p>
+<p>重复以上步骤，直至$U$为空集。  </p>
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="https://i.loli.net/2019/10/13/htoBjFzKGVnyw6D.png" alt="dij.png"></p>
+<p>（该图为LuoguP4779样例图示，graphviz制作）</p>
+<p>工作量稍大先坑着了。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>松弛，严格来讲并不属于最短路算法，却是该算法的核心部分</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(dis[u]+G[u][i].w &lt; dis[v])</span><br><span class="line">    dis[v] = dis[u]+G[u][i].w<span class="comment">//G[u][i]是一条从u指向v的边</span></span><br></pre></td></tr></table></figure>
+<p>堆优化代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::priority_queue;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">200010</span>;</span><br><span class="line"><span class="keyword">int</span> dis[MAXN];</span><br><span class="line"><span class="keyword">int</span> m,n,s;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u,v,w;</span><br><span class="line"></span><br><span class="line">&#125;;<span class="built_in">vector</span>&lt;edge&gt; G[MAXM];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u,d;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> node&amp; rhs) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> d&gt;rhs.d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    edge newe;</span><br><span class="line">    newe.u = u,newe.v = v,newe.w = w;</span><br><span class="line">    G[u].push_back(newe);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijkstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">        dis[i] = <span class="number">1000000000</span>;</span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    priority_queue&lt;node&gt; Q;</span><br><span class="line">    Q.push((node)&#123;s,<span class="number">0</span>&#125;);</span><br><span class="line">    <span class="keyword">while</span>(!Q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        node nown = Q.top();</span><br><span class="line">        Q.pop();</span><br><span class="line">        <span class="keyword">int</span> &amp;u = nown.u,&amp;d = nown.d;</span><br><span class="line">        <span class="keyword">if</span>(d != dis[u])<span class="comment">//证明在此节点被取出之前u的最短路已被更新，则跳过这个节点</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; G[u].size();i ++)</span><br><span class="line">        &#123;   </span><br><span class="line">            <span class="keyword">int</span> &amp;w = G[u][i].w,&amp;v = G[u][i].v;</span><br><span class="line">            <span class="keyword">if</span>(dis[u]+G[u][i].w &lt; dis[v])</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v] = dis[u]+w;</span><br><span class="line">                Q.push((node)&#123;v,dis[v]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> u,v,w;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">        addEdge(u,v,w);</span><br><span class="line">    &#125;</span><br><span class="line">    dijkstra();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,dis[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -489,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -544,6 +568,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法主要思路"><span class="nav-number">1.</span> <span class="nav-text">算法主要思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解"><span class="nav-number">2.</span> <span class="nav-text">图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -571,7 +611,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.2k</span>
+    <span title="Site words total count">7.9k</span>
   
 </div>
 
