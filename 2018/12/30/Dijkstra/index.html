@@ -88,7 +88,7 @@
 <meta property="og:description" content="Dijkstra算法是典型的单源最短路径算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。   算法主要思路取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$   易知初始时$S$中只有一个元素$s$，$dis[">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/10/13/htoBjFzKGVnyw6D.png">
-<meta property="og:updated_time" content="2019-10-13T14:07:27.972Z">
+<meta property="og:updated_time" content="2019-10-13T14:11:02.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈算法之Dijkstra">
 <meta name="twitter:description" content="Dijkstra算法是典型的单源最短路径算法，也就是用于计算一个节点到其他节点的最短路径的算法。它的主要特点为以起始点中心，层层扩展。利用贪心的思想不断更新最短路。   算法主要思路取起点$s$，引入集合$S$和$U$，$S$中为已求出最短路径的节点（最短路径已确定），$U$中为未求出最短路径的节点。记节点$v$到$s$的距离为$dis[v]$   易知初始时$S$中只有一个元素$s$，$dis[">
@@ -342,7 +342,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-13T22:07:27+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-13T22:11:02+08:00">
                 2019-10-13
               </time>
             
@@ -1110,6 +1110,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
