@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[NOIP2015]信息传递题解]]></title>
+    <url>%2F2019%2F10%2F25%2FNOIP2015-%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[主要思路将每个人抽象成图中的一个点，则他告诉告诉另一个人就是向那个人连一条有向边，则一个人得到了自己的生日既是一个人和知道自己生日的人在一个环中。 通过DFS找环，并比较求得最小环的长度。 由于本题每个点出度都为1，所以每个点，每条边都只能在一个环中。所以第二次碰到搜过的环上的任意点便可直接回溯。]]></content>
+      <tags>
+        <tag>DFS</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[线性代数学习笔记]]></title>
     <url>%2F2019%2F10%2F04%2F%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[向量(vector)2019.10.4 表示方式 几何表示：具有方向的线段叫做有向线段，向量为有向线段（在线性代数中，通常以原点为起点） $ \vec u=\begin{bmatrix}2 \\3 \\\end{bmatrix} $ 表示为图中箭头 坐标表示：有序的数字列表 \begin{bmatrix}a \\b \\\end{bmatrix}​ 如上二维向量代表由原点指向 (a,b) 的箭头，也就是从原点在x轴移动a“步”,再在y轴移动b“步”。多维同理 基础运算向量加法(vector addition) 三角形法则 将一个向量的起点移到另一个向量的终点，这两个向量的和为后者的起点指向前者的终点 ，多个向量同理 $ \vec u+\vec v=\vec w $ 所以 \begin{bmatrix}a \\b \\\end{bmatrix}+\begin{bmatrix}c \\d \\\end{bmatrix}=\begin{bmatrix}a+c \\b+d \\\end{bmatrix}相当于先在x轴移动 a+c “步”，再在y轴移动 b+d “步”，效果等同于在x轴移动 a “步”，在y轴移动 b “步”，再在x轴移动 c “步”，在y轴移动 d “步”。 向量数乘(vector multiplication by a number)对向量的缩放,用于控制缩放的量称为标量(scalar)，在这里通常可与数字(number)互相替换。 x\cdot\begin{bmatrix}a \\b \\\end{bmatrix} =\begin{bmatrix}xa \\xb\end{bmatrix}]]></content>
@@ -17,7 +26,7 @@
   <entry>
     <title><![CDATA[高中每周刷题记录]]></title>
     <url>%2F2019%2F09%2F08%2F%E9%AB%98%E4%B8%AD%E6%AF%8F%E5%91%A8%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[201910.14-10.20两天做了三场比赛里的签到题… CF594Div.2两道水题 AtCoderBeginnerContest143ABCD四道水题 XR-4歌唱比赛另一道大水模拟题 XR-4模拟赛水模拟题 10.7-10.13这周不见了orz 大概是因为月考 9.30-10.6洛谷P1087FBI树 洛谷P1030求先序序列 9.23-9.29洛谷P2058统计和 树状数组单点修改+区间查询 洛谷P1908逆序对 树状数组求逆序对 洛谷P3374[模板]树状数组1 树状数组单点修改+区间查询 洛谷P3368[模板]树状数组2 树状数组区间修改+单点查询 9.16-9.22洛谷P1082同余方程 9.9-9.15洛谷P1478陶陶摘苹果（升级版 排序 模拟 洛谷P1339[USACO09OCT]热浪Heat Wave 最短路 洛谷P1196[NOI2002]银河英雄传说 带权并查集 洛谷P1111修复公路 并查集 洛谷P1090合并果子 优先队列(小根堆) 9.2-9.8洛谷P1226【模板】快速幂||取余运算洛谷P1160队列安排 双向链表洛谷P1006传纸条 四维DP]]></content>
+    <content type="text"><![CDATA[201911.04-11.1051nod猴猴吃苹果 洛谷P1091合唱队形 正反两次LIS 洛谷P1060开心的金明 01背包 洛谷P1010幂次方 递归 洛谷P1088火星人 下一个排列(next_permutation) 洛谷P1098字符串的展开 模拟 洛谷P1603斯诺登的密码 字符串 10.28-11.03洛谷P1038神经网络 拓扑排序 10.21-10.27洛谷P2661信息传递 DFS 最小环 洛谷P1032字串变换 BFS 字符串 10.14-10.20两天做了三场比赛里的签到题… CF594Div.2两道水题 AtCoderBeginnerContest143ABCD四道水题 XR-4歌唱比赛另一道大水模拟题 XR-4模拟赛水模拟题 10.7-10.13这周不见了orz 大概是因为月考 9.30-10.6洛谷P1087FBI树 洛谷P1030求先序序列 9.23-9.29洛谷P2058统计和 树状数组单点修改+区间查询 洛谷P1908逆序对 树状数组求逆序对 洛谷P3374[模板]树状数组1 树状数组单点修改+区间查询 洛谷P3368[模板]树状数组2 树状数组区间修改+单点查询 9.16-9.22洛谷P1082同余方程 9.9-9.15洛谷P1478陶陶摘苹果（升级版 排序 模拟 洛谷P1339[USACO09OCT]热浪Heat Wave 最短路 洛谷P1196[NOI2002]银河英雄传说 带权并查集 洛谷P1111修复公路 并查集 洛谷P1090合并果子 优先队列(小根堆) 9.2-9.8洛谷P1226【模板】快速幂||取余运算洛谷P1160队列安排 双向链表洛谷P1006传纸条 四维DP]]></content>
       <tags>
         <tag>刷题记录</tag>
       </tags>
