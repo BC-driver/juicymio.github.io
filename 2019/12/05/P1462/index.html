@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="最短路,二分,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="mathjax: true 做到这道题的时候没有搜到讲得比较好的题解(主要原因是这题太简单,而我太弱不会写 我正在写的这篇讲得也不好(逃,而且这道题所考察的错排问题也是我的盲点,于是赶紧上网搜索了一下,做完了题,简略地写个题解复习一下 言归正传,想要做这道题,要先了解”错排问题” 问题: 十本不同的书放在书架上。现重新摆放，使每本书都不在原来放的位置。有几种摆法? 这个问题推广一下，就是错排问题，">
+<meta name="description" content="简要思路二分答案+最短路验证   点权为费用,所以只挑符合答案的点走,边权为血量,显然最短路是扣血最少的,所以可以用最短路   这个题意毒瘤,其实是求路径上的边权的最大值最小为多少(于是就是二分 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
+<meta name="keywords" content="最短路,二分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU2049神、上帝以及老天爷题解及错排问题">
-<meta property="og:url" content="http://yoursite.com/2018/07/24/HDU2049神、上帝以及老天爷题解及错排问题/index.html">
+<meta property="og:title" content="P1462通往奥格瑞玛的道路题解">
+<meta property="og:url" content="http://yoursite.com/2019/12/05/P1462/index.html">
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
-<meta property="og:description" content="mathjax: true 做到这道题的时候没有搜到讲得比较好的题解(主要原因是这题太简单,而我太弱不会写 我正在写的这篇讲得也不好(逃,而且这道题所考察的错排问题也是我的盲点,于是赶紧上网搜索了一下,做完了题,简略地写个题解复习一下 言归正传,想要做这道题,要先了解”错排问题” 问题: 十本不同的书放在书架上。现重新摆放，使每本书都不在原来放的位置。有几种摆法? 这个问题推广一下，就是错排问题，">
+<meta property="og:description" content="简要思路二分答案+最短路验证   点权为费用,所以只挑符合答案的点走,边权为血量,显然最短路是扣血最少的,所以可以用最短路   这个题意毒瘤,其实是求路径上的边权的最大值最小为多少(于是就是二分 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-04T14:27:44.056Z">
+<meta property="og:updated_time" content="2019-12-05T05:30:26.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU2049神、上帝以及老天爷题解及错排问题">
-<meta name="twitter:description" content="mathjax: true 做到这道题的时候没有搜到讲得比较好的题解(主要原因是这题太简单,而我太弱不会写 我正在写的这篇讲得也不好(逃,而且这道题所考察的错排问题也是我的盲点,于是赶紧上网搜索了一下,做完了题,简略地写个题解复习一下 言归正传,想要做这道题,要先了解”错排问题” 问题: 十本不同的书放在书架上。现重新摆放，使每本书都不在原来放的位置。有几种摆法? 这个问题推广一下，就是错排问题，">
+<meta name="twitter:title" content="P1462通往奥格瑞玛的道路题解">
+<meta name="twitter:description" content="简要思路二分答案+最短路验证   点权为费用,所以只挑符合答案的点走,边权为血量,显然最短路是扣血最少的,所以可以用最短路   这个题意毒瘤,其实是求路径上的边权的最大值最小为多少(于是就是二分 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/24/HDU2049神、上帝以及老天爷题解及错排问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/05/P1462/">
 
 
 
 
 
-  <title>HDU2049神、上帝以及老天爷题解及错排问题 | JuicyMio's Blog</title>
+  <title>P1462通往奥格瑞玛的道路题解 | JuicyMio's Blog</title>
   
 
 
@@ -294,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/HDU2049神、上帝以及老天爷题解及错排问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/P1462/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuicyMio">
@@ -311,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HDU2049神、上帝以及老天爷题解及错排问题</h1>
+          <h1 class="post-title" itemprop="name headline">P1462通往奥格瑞玛的道路题解</h1>
         
 
         <div class="post-meta">
@@ -324,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T18:42:20+08:00">
-                2018-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T13:24:19+08:00">
+                2019-12-05
               </time>
             
 
@@ -340,8 +341,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-04T22:27:44+08:00">
-                2019-10-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-05T13:30:26+08:00">
+                2019-12-05
               </time>
             
           </span>
@@ -368,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  878
+                  490
                 </span>
               
 
@@ -393,29 +394,11 @@
       
 
       
-        <p>mathjax: true</p>
-<p>做到这道题的时候没有搜到讲得比较好的题解(主要原因是这题太简单,而我太弱不会写</p>
-<p>我正在写的这篇讲得也不好(逃,而且这道题所考察的错排问题也是我的盲点,于是赶紧上网搜索了一下,做完了题,简略地写个题解复习一下</p>
-<p>言归正传,想要做这道题,要先了解”错排问题”</p>
-<p>问题: 十本不同的书放在书架上。现重新摆放，使每本书都不在原来放的位置。有几种摆法?</p>
-<p>这个问题推广一下，就是<strong>错排问题</strong>，是组合数学中的问题之一。考虑一个有n个元素的排列，若一个排列中所有的元素都不在自己原来的位置上，那么这样的排列就称为原排列的一个错排。 n个元素的错排数记为D(n)。 研究一个排列错排个数的问题，叫做错排问题或称为更列问题。</p>
-<p>错排问题最早被尼古拉·伯努利和欧拉研究，因此历史上也称为伯努利-欧拉的装错信封的问题。这个问题有许多具体的版本，如在写信时将n封信装到n个不同的信封里，有多少种全部装错信封的情况?又比如四人各写一张贺年卡互相赠送，有多少种赠送方法?自己写的贺年卡不能送给自己，所以也是典型的错排问题。</p>
-<p>以上摘自百度百科</p>
-<p>然后这个问题怎么解呢?其实百度百科上已经有详细的证明了(<del>但是我没学会</del>,所以就讲一下递推式的推导,对于这道题来说已经完全够用了。<br>(以下参考自百度百科)</p>
-<p><strong>显然</strong>，D(1) = 0(因为根本没法错）,D(2) = 1。所以可以开始考虑n大于等于3的情况。那么我们设第n个元素放在了第k位(哪个元素都无所谓,就有两种情况</p>
-<ul>
-<li><p>第k个元素放在第n位,也就是k,n互换,即他们两个已经完成错排了，那么<strong>又显然</strong>,问题与这两个元素无关了,变成了剩下的n-2个元素错排,也就是D(n-2)</p>
-</li>
-<li><p>第k个元素没放在第n位,<strong>再显然</strong>问题就变成了包括第k个元素在内的剩下(n-1)个元素的错排。即为D(n-1)</p>
-</li>
-</ul>
-<p>除第n个元素外每个元素都有D(n-1)+d(n-2)种放法，所以总放法</p>
-<p><strong>D(n) = n-1*(D(n-1)+D(n-2))</strong></p>
-<p>错排问题还有通项公式，大家可以自行学习<del>我说过我不会</del></p>
-<p>掌握了这个，本题就很简单了<del>本来就很简单</del>，只需要算出错排数D(n)和总排列n!,再除一下弄成百分数就好了</p>
-<p>（有一个小坑，<del>正常人都能看出来</del>，会爆int</p>
-<p>上代码</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">21</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> d[MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> j[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    d[<span class="number">1</span>] = <span class="number">0</span>;<span class="comment">//没办法错</span></span><br><span class="line">    d[<span class="number">2</span>] = <span class="number">1</span>;<span class="comment">//只有互换</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">3</span>;i &lt;= <span class="number">20</span>;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        d[i] = (i<span class="number">-1</span>)*(d[i<span class="number">-1</span>]+d[i<span class="number">-2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    j[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">20</span>;i ++)</span><br><span class="line">    j[i] = j[i<span class="number">-1</span>] * i;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="keyword">int</span> t;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">        <span class="keyword">double</span> ans = <span class="keyword">double</span>(d[t])*<span class="number">100</span>/<span class="keyword">double</span>(j[t]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2f%\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="简要思路"><a href="#简要思路" class="headerlink" title="简要思路"></a>简要思路</h2><p>二分答案+最短路验证  </p>
+<p>点权为费用,所以只挑符合答案的点走,边权为血量,显然最短路是扣血最少的,所以可以用最短路  </p>
+<p>这个题意毒瘤,其实是求路径上的边权的最大值最小为多少(于是就是二分</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n,m,b;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> u,d;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> node&amp; rhs)<span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> d &gt; rhs.d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> v,w;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        c = getchar();</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        ans = ans*<span class="number">10</span>+c-<span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">return</span> f*ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;edge&gt; G[<span class="number">10000</span>+<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> N[<span class="number">10000</span>+<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">10000</span>+<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    edge e;</span><br><span class="line">    e.v = v,e.w = w;</span><br><span class="line">    G[u].push_back(e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dijkstra</span><span class="params">(<span class="keyword">int</span> M)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(dis,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="built_in">std</span>::priority_queue&lt;node&gt; Q;</span><br><span class="line">    node cur;</span><br><span class="line">    dis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    cur.u = <span class="number">1</span>,cur.d = <span class="number">0</span>;</span><br><span class="line">    Q.push(cur);</span><br><span class="line">    <span class="keyword">while</span>(!Q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        cur = Q.top();</span><br><span class="line">        Q.pop();</span><br><span class="line">        <span class="keyword">if</span>(cur.d != dis[cur.u])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">0</span>;i &lt; G[cur.u].size();i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dis[cur.u]+G[cur.u][i].w &lt; dis[G[cur.u][i].v] &amp;&amp; N[G[cur.u][i].v] &lt;= M)</span><br><span class="line">            &#123;</span><br><span class="line">                dis[G[cur.u][i].v] = dis[cur.u]+G[cur.u][i].w;</span><br><span class="line">                Q.push(&#123;G[cur.u][i].v,dis[G[cur.u][i].v]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dis[n] &lt; b) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("1462.in","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("1462.out","w",stdout);</span></span><br><span class="line">    <span class="keyword">int</span> mx = <span class="number">-1</span>;</span><br><span class="line">    n = read(),m = read(),b = read();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        N[i] = read();</span><br><span class="line">        mx = N[i] &gt; mx ? N[i] : mx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> u,v,w;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        u = read(),v = read(),w = read();</span><br><span class="line">        <span class="keyword">if</span>(u != v)</span><br><span class="line">        &#123;</span><br><span class="line">            addEdge(u,v,w);</span><br><span class="line">            addEdge(v,u,w);   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!dijkstra(<span class="number">0x3f3f3f3f</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"AFK"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>,r = mx+<span class="number">1</span>,mid;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l+r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">bool</span> res = dijkstra(mid);</span><br><span class="line">        <span class="keyword">if</span>(res)</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,l);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -430,6 +413,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/最短路/" rel="tag"># 最短路</a>
+          
+            <a href="/tags/二分/" rel="tag"># 二分</a>
+          
+        </div>
+      
 
       
       
@@ -439,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/转载易懂的博客/" rel="next" title="转载易懂的博客">
-                <i class="fa fa-chevron-left"></i> 转载易懂的博客
+              <a href="/2019/11/17/CSP2019游记/" rel="next" title="CSP2019游记">
+                <i class="fa fa-chevron-left"></i> CSP2019游记
               </a>
             
           </div>
@@ -448,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/11/并查集/" rel="prev" title="并查集">
-                并查集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -557,6 +553,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简要思路"><span class="nav-number">1.</span> <span class="nav-text">简要思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
