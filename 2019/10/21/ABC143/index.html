@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="递归,">
+  <meta name="keywords" content="AtCoder,题解,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="燥热的夏天几乎使我迷失了方向 这次的博客介绍的是基础算法“递归”，递归是算法竞赛中非常常用的基础技巧（暴搜骗分好啊），也是许多高级算法的基础。所以一定要从原理到编写方式熟练掌握。 然而递归的编写方式令人难以理解，可以说是初学者的第一道坎了。（笔者本人也在此研究了很久）。 递归的定义：函数自己调用自己 笔者对递归的浅显理解： 通过把上一次的输出（进行一定处理）作为下一次的输入，重复做同一件事。不断缩">
-<meta name="keywords" content="递归">
+<meta name="description" content="ACurtain A-2B,小于0则取0   BTAKOYAKI FESTIVAL 2019 握手原理枚举每组takoyaki，累加其积。   CSlimes 连续相同字母的算一个 DTriangles 排序后枚举每种情况判断是否构成三角形（此时只需判断两小边之和大于大边） ETravel by Car 首先跑一遍Floyd求出所有点间的最短路，从而将最少需要加k次油的路（即每两点）分成k+1个点">
+<meta name="keywords" content="AtCoder,题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈算法之递归">
-<meta property="og:url" content="http://yoursite.com/2018/07/21/浅谈算法之递归/index.html">
+<meta property="og:title" content="AtcoderBeginnerContest143">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/ABC143/index.html">
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
-<meta property="og:description" content="燥热的夏天几乎使我迷失了方向 这次的博客介绍的是基础算法“递归”，递归是算法竞赛中非常常用的基础技巧（暴搜骗分好啊），也是许多高级算法的基础。所以一定要从原理到编写方式熟练掌握。 然而递归的编写方式令人难以理解，可以说是初学者的第一道坎了。（笔者本人也在此研究了很久）。 递归的定义：函数自己调用自己 笔者对递归的浅显理解： 通过把上一次的输出（进行一定处理）作为下一次的输入，重复做同一件事。不断缩">
+<meta property="og:description" content="ACurtain A-2B,小于0则取0   BTAKOYAKI FESTIVAL 2019 握手原理枚举每组takoyaki，累加其积。   CSlimes 连续相同字母的算一个 DTriangles 排序后枚举每种情况判断是否构成三角形（此时只需判断两小边之和大于大边） ETravel by Car 首先跑一遍Floyd求出所有点间的最短路，从而将最少需要加k次油的路（即每两点）分成k+1个点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-04T14:45:54.249Z">
+<meta property="og:updated_time" content="2019-12-07T06:56:26.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈算法之递归">
-<meta name="twitter:description" content="燥热的夏天几乎使我迷失了方向 这次的博客介绍的是基础算法“递归”，递归是算法竞赛中非常常用的基础技巧（暴搜骗分好啊），也是许多高级算法的基础。所以一定要从原理到编写方式熟练掌握。 然而递归的编写方式令人难以理解，可以说是初学者的第一道坎了。（笔者本人也在此研究了很久）。 递归的定义：函数自己调用自己 笔者对递归的浅显理解： 通过把上一次的输出（进行一定处理）作为下一次的输入，重复做同一件事。不断缩">
+<meta name="twitter:title" content="AtcoderBeginnerContest143">
+<meta name="twitter:description" content="ACurtain A-2B,小于0则取0   BTAKOYAKI FESTIVAL 2019 握手原理枚举每组takoyaki，累加其积。   CSlimes 连续相同字母的算一个 DTriangles 排序后枚举每种情况判断是否构成三角形（此时只需判断两小边之和大于大边） ETravel by Car 首先跑一遍Floyd求出所有点间的最短路，从而将最少需要加k次油的路（即每两点）分成k+1个点">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/21/浅谈算法之递归/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/21/ABC143/">
 
 
 
 
 
-  <title>浅谈算法之递归 | JuicyMio's Blog</title>
+  <title>AtcoderBeginnerContest143 | JuicyMio's Blog</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/21/浅谈算法之递归/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/21/ABC143/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuicyMio">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈算法之递归</h1>
+          <h1 class="post-title" itemprop="name headline">AtcoderBeginnerContest143</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-21T17:24:26+08:00">
-                2018-07-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T22:49:52+08:00">
+                2019-10-21
               </time>
             
 
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-04T22:45:54+08:00">
-                2019-10-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T14:56:26+08:00">
+                2019-12-07
               </time>
             
           </span>
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  572
+                  142
                 </span>
               
 
@@ -394,22 +394,18 @@
       
 
       
-        <p>燥热的夏天几乎使我迷失了方向</p>
-<p>这次的博客介绍的是基础算法“递归”，递归是算法竞赛中非常常用的基础技巧（<del>暴搜骗分好啊</del>），也是许多高级算法的基础。所以一定要从原理到编写方式熟练掌握。</p>
-<p>然而递归的编写方式令人难以理解，可以说是初学者的第一道坎了。（笔者本人也在此研究了很久）。</p>
-<p><strong>递归的定义：函数自己调用自己</strong></p>
-<p><strong>笔者对递归的浅显理解： 通过把上一次的输出（进行一定处理）作为下一次的输入，重复做同一件事。不断缩小问题的规模，最终求得结果</strong></p>
-<p>递归分为尾部递归（也称尾递归）和普通递归(也称中间递归），那么他们有什么区别呢</p>
-<h3 id="尾部递归"><a href="#尾部递归" class="headerlink" title="尾部递归"></a>尾部递归</h3><p>我来讲个故事吧</p>
-<p>从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：从前有座山……</p>
-<p>那为什么称之为尾部递归呢？因为在代码中，递归位于函数的尾部，也就是说下一个函数不再需要上一个函数的环境了，得出结果后会直接返回。</p>
-<h3 id="中部递归"><a href="#中部递归" class="headerlink" title="中部递归"></a>中部递归</h3><p>我再讲个故事</p>
-<p>从前有座山，山上有座庙，庙里有个老和尚，老和尚给小和尚讲故事。故事的内容是：……<br>小和尚受不了，跑了。</p>
-<p>这就是中部递归，递归位于函数的中部，函数返回后需要继续处理。</p>
-<p>笔者主观认为中部递归更难理解些，因此建议大家反复看看这个故事（其实没什么用），并找找其他的博客看看有什么能启发到自己的东西。</p>
-<p>（需要说明的是，以上两个故事可能不是很严谨的递归，但是帮助理解足够了。）</p>
-<h3 id="递归的特点"><a href="#递归的特点" class="headerlink" title="递归的特点"></a>递归的特点</h3><p>优点是：逻辑简单清晰，代码可读性强<br>缺点是：过深的调用会导致爆栈</p>
-<p>（本文配合搜索食用更佳）</p>
+        <h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_a" target="_blank" rel="noopener">Curtain</a></p>
+<p>A-2B,小于0则取0  </p>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_b" target="_blank" rel="noopener">TAKOYAKI FESTIVAL 2019</a></p>
+<p>握手原理枚举每组takoyaki，累加其积。  </p>
+<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_c" target="_blank" rel="noopener">Slimes</a></p>
+<p>连续相同字母的算一个</p>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_d" target="_blank" rel="noopener">Triangles</a></p>
+<p>排序后枚举每种情况判断是否构成三角形（此时只需判断两小边之和大于大边）</p>
+<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_e" target="_blank" rel="noopener">Travel by Car</a></p>
+<p>首先跑一遍Floyd求出所有点间的最短路，从而将最少需要加k次油的路（即每两点）分成k+1个点建图，在新生成的图上再次Floyd求出最短路。  </p>
+<p>之后对于每个询问给出输出。</p>
+<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p><a href="https://atcoder.jp/contests/abc143/tasks/abc143_f" target="_blank" rel="noopener">Distinct Numbers</a></p>
 
       
     </div>
@@ -427,7 +423,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/递归/" rel="tag"># 递归</a>
+            <a href="/tags/AtCoder/" rel="tag"># AtCoder</a>
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -440,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/19/浅谈算法之快速排序/" rel="next" title="浅谈算法之快速排序">
-                <i class="fa fa-chevron-left"></i> 浅谈算法之快速排序
+              <a href="/2019/10/04/线性代数学习笔记/" rel="next" title="线性代数学习笔记">
+                <i class="fa fa-chevron-left"></i> 线性代数学习笔记
               </a>
             
           </div>
@@ -450,8 +448,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/24/LuoguP1926【小书童-刷题大军】题解/" rel="prev" title="P1926 小书童刷题大军">
-                P1926 小书童刷题大军 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/17/CSP2019游记/" rel="prev" title="CSP2019游记">
+                CSP2019游记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -531,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +542,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#尾部递归"><span class="nav-number">1.</span> <span class="nav-text">尾部递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中部递归"><span class="nav-number">2.</span> <span class="nav-text">中部递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归的特点"><span class="nav-number">3.</span> <span class="nav-text">递归的特点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A"><span class="nav-number">1.</span> <span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">1.1.</span> <span class="nav-text">B</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">2.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D"><span class="nav-number">3.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E"><span class="nav-number">4.</span> <span class="nav-text">E</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F"><span class="nav-number">5.</span> <span class="nav-text">F</span></a></li></ol></div>
             
 
           </div>
@@ -611,7 +609,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11k</span>
+    <span title="Site words total count">10.9k</span>
   
 </div>
 
@@ -1110,26 +1108,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
