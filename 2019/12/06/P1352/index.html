@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
 <meta property="og:description" content="一棵树上儿子和父亲不能同时出现,求最大点权和   链接P1352 题解树形DP经典题,不妨用  $ f[i][0]$  表示 $i$ 号不来时(下属来不来都可以)的最大快乐指数, $f[i][1]$ 表示 $i$ 号来时(下属一定都不来)的最大快乐指数 则  $f[x][0] = \Sigma({\max(f[v][0],f[v][1])}),v\in son[x]$   $f[x][1] = \">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-06T17:30:45.850Z">
+<meta property="og:updated_time" content="2019-12-07T04:56:11.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="P1352 没有上司的舞会">
 <meta name="twitter:description" content="一棵树上儿子和父亲不能同时出现,求最大点权和   链接P1352 题解树形DP经典题,不妨用  $ f[i][0]$  表示 $i$ 号不来时(下属来不来都可以)的最大快乐指数, $f[i][1]$ 表示 $i$ 号来时(下属一定都不来)的最大快乐指数 则  $f[x][0] = \Sigma({\max(f[v][0],f[v][1])}),v\in son[x]$   $f[x][1] = \">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T01:30:45+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T12:56:11+08:00">
                 2019-12-07
               </time>
             
@@ -537,7 +537,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1103,6 +1103,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

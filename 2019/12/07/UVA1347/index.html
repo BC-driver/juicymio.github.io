@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
 <meta property="og:description" content="按x递增顺序给出n个点,设计一条从最左边的点出发到最右边的点再返回的路径,使得除了最左点与最右点之外每个点恰好经过一次,且路径总长度最短. 题解假设两个人同时从最左点出发,则用 $d(i,j)$ 表示$1-max(i,j)$ 全部走过,且两个人分别处于 $i,j$ 时到终点还要多长距离.   易知$d(i,j) = d(j,i)$ 则规定 $i &amp;gt; j$ .因每个点都要走过,所以不能跳过任何">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-06T17:25:17.430Z">
+<meta property="og:updated_time" content="2019-12-07T04:55:59.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UVA1347 Tour">
 <meta name="twitter:description" content="按x递增顺序给出n个点,设计一条从最左边的点出发到最右边的点再返回的路径,使得除了最左点与最右点之外每个点恰好经过一次,且路径总长度最短. 题解假设两个人同时从最左点出发,则用 $d(i,j)$ 表示$1-max(i,j)$ 全部走过,且两个人分别处于 $i,j$ 时到终点还要多长距离.   易知$d(i,j) = d(j,i)$ 则规定 $i &amp;gt; j$ .因每个点都要走过,所以不能跳过任何">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T01:25:17+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T12:55:59+08:00">
                 2019-12-07
               </time>
             
@@ -530,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1096,6 +1096,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
