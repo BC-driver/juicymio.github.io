@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="DP,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JuicyMio&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+<meta name="description" content="链接UVA   Luogu   题解主要参照紫书思路 $f(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个的最小代价.该状态定义类似最长公共子序列.   $d(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个时所有 $L(c)$ 的和. 易知状态转移方程为 $f(i)(j)=min(f(i-1)(j)+d(i-1)(j),f(i)(j-1)+d(i)(j-">
+<meta name="keywords" content="DP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA1625 颜色的长度">
+<meta property="og:url" content="http://yoursite.com/2019/12/11/UVA1625/index.html">
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
-<meta property="og:description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
+<meta property="og:description" content="链接UVA   Luogu   题解主要参照紫书思路 $f(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个的最小代价.该状态定义类似最长公共子序列.   $d(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个时所有 $L(c)$ 的和. 易知状态转移方程为 $f(i)(j)=min(f(i-1)(j)+d(i-1)(j),f(i)(j-1)+d(i)(j-">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-11T08:59:18.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JuicyMio&#39;s Blog">
-<meta name="twitter:description" content="比你优秀的人还在努力，比你差劲的人还没放弃，你有什么资格说自己无能为力？">
+<meta name="twitter:title" content="UVA1625 颜色的长度">
+<meta name="twitter:description" content="链接UVA   Luogu   题解主要参照紫书思路 $f(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个的最小代价.该状态定义类似最长公共子序列.   $d(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个时所有 $L(c)$ 的和. 易知状态转移方程为 $f(i)(j)=min(f(i-1)(j)+d(i-1)(j),f(i)(j-1)+d(i)(j-">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/07/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/11/UVA1625/">
 
 
 
 
 
-  <title>归档 | JuicyMio's Blog</title>
+  <title>UVA1625 颜色的长度 | JuicyMio's Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -279,177 +281,191 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/UVA1625/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JuicyMio">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JuicyMio's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">UVA1625 颜色的长度</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T16:49:33+08:00">
+                2019-12-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-11T16:59:18+08:00">
+                2019-12-11
+              </time>
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 24 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/24/HDU2049/" itemprop="url">
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">HDU2049神、上帝以及老天爷</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  608
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-24T18:42:20+08:00" content="2018-07-24">
-          07-24
-        </time>
-      </div>
+              
 
-    </header>
-  </article>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/24/转载易懂的博客/" itemprop="url">
-              
-                <span itemprop="name">转载易懂的博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-24T18:41:47+08:00" content="2018-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/24/P1157/" itemprop="url">
-              
-                <span itemprop="name">LuoguP1157心得</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-24T18:41:12+08:00" content="2018-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=4500" target="_blank" rel="noopener">UVA</a>  </p>
+<p><a href="https://www.luogu.com.cn/problem/UVA1625" target="_blank" rel="noopener">Luogu</a>  </p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>主要参照紫书思路</p>
+<p>$f(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个的最小代价.该状态定义类似最长公共子序列.  </p>
+<p>$d(i)(j)$ 表示第一个串移走 $i$ 个,第二个串移走 $j$ 个时所有 $L(c)$ 的和.</p>
+<p>易知状态转移方程为</p>
+<p>$f(i)(j)=min(f(i-1)(j)+d(i-1)(j),f(i)(j-1)+d(i)(j-1))$</p>
+<p>边界$f(0)(0)=0$</p>
+<p>然后想办法求$d(i)(j)$</p>
+<p>记录每个颜色第一次和最后一次出现的位置,每次取出一个字符时判断是否是第一个或最后一个,据此更新.  </p>
+<p>然后我写完T飞,改了许多次,最后没办法打开题解对着改,仍然T飞.把$f$数组的memset删了改到dp循环内部赋值之后,A了.</p>
+<p><strong>启示:不要对整个数组乱用memset</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">5000</span>+<span class="number">1</span>][<span class="number">5000</span>+<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">5000</span>+<span class="number">1</span>][<span class="number">5000</span>+<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> first[<span class="number">2</span>][<span class="number">27</span>];</span><br><span class="line"><span class="keyword">int</span> last[<span class="number">2</span>][<span class="number">27</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//memset(f,0x3f,sizeof(f));</span></span><br><span class="line">        <span class="built_in">memset</span>(first,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(first));</span><br><span class="line">        <span class="built_in">memset</span>(last,<span class="number">-1</span>,<span class="keyword">sizeof</span>(last));</span><br><span class="line">       <span class="keyword">char</span> s1[<span class="number">5000</span>+<span class="number">1</span>],s2[<span class="number">5000</span>+<span class="number">1</span>];</span><br><span class="line">       <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s1+<span class="number">1</span>);</span><br><span class="line">       <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s2+<span class="number">1</span>);</span><br><span class="line">       <span class="keyword">int</span> l1 = <span class="built_in">strlen</span>(s1 + <span class="number">1</span>);</span><br><span class="line">       <span class="keyword">int</span> l2 = <span class="built_in">strlen</span>(s2 + <span class="number">1</span>);</span><br><span class="line">        d[<span class="number">0</span>][<span class="number">0</span>] = f[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">26</span>;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= l1;j ++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (s1[j]-<span class="string">'A'</span> == i)</span><br><span class="line">                &#123;</span><br><span class="line">                    first[<span class="number">0</span>][i] = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= l2;j ++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s2[j] - <span class="string">'A'</span> == i)</span><br><span class="line">                &#123;</span><br><span class="line">                    first[<span class="number">1</span>][i] = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = l1;j &gt; <span class="number">0</span>;j --)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s1[j] - <span class="string">'A'</span> == i)</span><br><span class="line">                &#123;</span><br><span class="line">                    last[<span class="number">0</span>][i] = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = l2;j &gt; <span class="number">0</span>;j --)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s2[j] - <span class="string">'A'</span> == i)</span><br><span class="line">                &#123;</span><br><span class="line">                    last[<span class="number">1</span>][i] = j;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= l1;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt;= l2;j ++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span>)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                f[i][j] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">                <span class="keyword">if</span>(i &gt; <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    f[i][j] = <span class="built_in">std</span>::min(f[i][j],f[i<span class="number">-1</span>][j]+d[i<span class="number">-1</span>][j]);</span><br><span class="line">                    d[i][j] = d[i<span class="number">-1</span>][j];</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(i == first[<span class="number">0</span>][s1[i]-<span class="string">'A'</span>] &amp;&amp; j &lt; first[<span class="number">1</span>][s1[i]-<span class="string">'A'</span>])</span><br><span class="line">                        d[i][j] ++;</span><br><span class="line">                    <span class="keyword">if</span>(i == last[<span class="number">0</span>][s1[i]-<span class="string">'A'</span>] &amp;&amp; j &gt;= last[<span class="number">1</span>][s1[i]-<span class="string">'A'</span>])</span><br><span class="line">                        d[i][j] --;</span><br><span class="line">                        </span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(j &gt; <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    f[i][j] = <span class="built_in">std</span>::min(f[i][j],f[i][j<span class="number">-1</span>]+d[i][j<span class="number">-1</span>]);</span><br><span class="line">                    d[i][j] = d[i][j<span class="number">-1</span>];</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(i &lt; first[<span class="number">0</span>][s2[j]-<span class="string">'A'</span>] &amp;&amp; j == first[<span class="number">1</span>][s2[j]-<span class="string">'A'</span>])</span><br><span class="line">                        d[i][j] ++;</span><br><span class="line">                    <span class="keyword">if</span>(i &gt;= last[<span class="number">0</span>][s2[j]-<span class="string">'A'</span>] &amp;&amp; j == last[<span class="number">1</span>][s2[j]-<span class="string">'A'</span>])</span><br><span class="line">                        d[i][j] --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[l1][l2]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/24/P1926/" itemprop="url">
-              
-                <span itemprop="name">P1926 小书童刷题大军</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-24T18:39:46+08:00" content="2018-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DP/" rel="tag"># DP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/11/P1378/" rel="next" title="P1378 油滴扩展">
+                <i class="fa fa-chevron-left"></i> P1378 油滴扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -457,6 +473,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -477,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -531,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -680,6 +725,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1054,26 +1103,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
