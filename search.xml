@@ -5,8 +5,8 @@
     <url>%2F2019%2F12%2F11%2FP1378%2F</url>
     <content type="text"><![CDATA[链接Luogu 题解直接爆搜即可,每次放点的时候判断半径设为其他油滴相切或与边界相切(当然取最小值),放完所有点时更新最小值即可. 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;const double PI = 3.1415926535898;int read()&#123; char c; int f = 1,ans = 0; do &#123; c = getchar(); if(c == '-') f = -1; &#125; while (c &lt; '0' || c &gt; '9'); do &#123; ans = (ans &lt;&lt; 3) + (ans &lt;&lt; 1) + c - '0'; c = getchar(); &#125; while (c &lt;= '9' &amp;&amp; c &gt;= '0'); return f * ans;&#125;struct node&#123; int x, y, r; node(int r = 0) : r(r) &#123;&#125;&#125; nodes[100];double rad[100];int n;double mins = 10000000.0;int vis[100];double dist(node a,node b)&#123; return sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));&#125;double s(int i)&#123; double r = 100000000.0; for (int j = 2;j &lt; n+2;j ++) &#123; if(vis[j] &amp;&amp; j != i) &#123; r = std::min(r,std::max(dist(nodes[i],nodes[j])-rad[j],0.0)); &#125; &#125; r = std::min(r,(double)std::abs(nodes[0].x-nodes[i].x)); r = std::min(r,(double)std::abs(nodes[1].x-nodes[i].x)); r = std::min(r,(double)std::abs(nodes[0].y-nodes[i].y)); r = std::min(r,(double)std::abs(nodes[1].y-nodes[i].y)); rad[i] = r; return PI*r*r;&#125;void dfs(int k,double rest)&#123; if(k &gt; n - 1) &#123; //printf("%f %f\n",mins,rest); mins = std::min(mins,rest); return; &#125; for(int i = 2;i &lt; n + 2;i ++) &#123; if(vis[i]) continue; vis[i] = 1; dfs(k+1,rest-s(i)); vis[i] = 0; &#125;&#125;int main()&#123; n = read(); nodes[0].x = read(),nodes[0].y = read(); nodes[1].x = read(),nodes[1].y = read(); double S = std::abs((nodes[1].x-nodes[0].x)*(nodes[1].y-nodes[0].y)); for(int i = 2;i &lt; n + 2;i ++) &#123; nodes[i].x = read(); nodes[i].y = read(); &#125; dfs(0,S); int ans = mins+0.5; printf("%d", ans); return 0;&#125;]]></content>
       <tags>
-        <tag>搜索</tag>
         <tag>DFS</tag>
+        <tag>搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -179,8 +179,8 @@
     <url>%2F2018%2F07%2F24%2FP1157%2F</url>
     <content type="text"><![CDATA[只是一道dfs题，我做了半个小时左右。各种玄学错误，还有一些小细节处理不好，最后看到了一个题解指点迷津 大佬的题解1234567891011121314151617181920212223242526272829303132#include&lt;cstdio&gt;#define mian mainint a[10000];int used[10000];int n,r;void dfs(int cnt)&#123; if(cnt == r+1)//非常有趣的做法，值得学习（是我太弱orz,为了避免负数的下标而把a[0]作为了一个起点，一个初始值而不是答案的一部分。只要多选一个数，然后在输出的时候直接无视掉a[0]就可以了 &#123; for(int i = 1;i &lt; cnt;i ++) printf("%3d",a[i]); printf("\n"); &#125; for(int i = a[cnt-1];i &lt;= n;i ++) &#123; if(!used[i]) &#123; used[i] = 1; a[cnt] = i; dfs(cnt+1); a[cnt] = 0; used[i] = 0; &#125; &#125;&#125;int mian()&#123; a[0] = 1; scanf("%d%d",&amp;n,&amp;r); dfs(1); return 0;&#125;]]></content>
       <tags>
-        <tag>搜索</tag>
         <tag>DFS</tag>
+        <tag>搜索</tag>
       </tags>
   </entry>
   <entry>
