@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="链接A spy in the metro   Luogu 题解">
+<meta name="description" content="链接A spy in the metro   Luogu 题解时间单向流逝,所以可以直接按时间倒序DP,每一秒有三种决策:上左边的车,上右边的车,等车,从中取最小值. 关于实现,可以简单地预处理出每秒有没有车. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505">
 <meta name="keywords" content="DP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UVA1025 城市里的间谍">
 <meta property="og:url" content="http://yoursite.com/2019/12/07/UVA1025/index.html">
 <meta property="og:site_name" content="JuicyMio&#39;s Blog">
-<meta property="og:description" content="链接A spy in the metro   Luogu 题解">
+<meta property="og:description" content="链接A spy in the metro   Luogu 题解时间单向流逝,所以可以直接按时间倒序DP,每一秒有三种决策:上左边的车,上右边的车,等车,从中取最小值. 关于实现,可以简单地预处理出每秒有没有车. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-07T08:39:57.111Z">
+<meta property="og:updated_time" content="2019-12-20T05:23:50.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UVA1025 城市里的间谍">
-<meta name="twitter:description" content="链接A spy in the metro   Luogu 题解">
+<meta name="twitter:description" content="链接A spy in the metro   Luogu 题解时间单向流逝,所以可以直接按时间倒序DP,每一秒有三种决策:上左边的车,上右边的车,等车,从中取最小值. 关于实现,可以简单地预处理出每秒有没有车. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505">
 
 
 
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-07T16:39:57+08:00">
-                2019-12-07
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-20T13:23:50+08:00">
+                2019-12-20
               </time>
             
           </span>
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10
+                  431
                 </span>
               
 
@@ -396,7 +396,10 @@
       
         <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=3466" target="_blank" rel="noopener">A spy in the metro</a>  </p>
 <p><a href="https://www.luogu.com.cn/problem/UVA1025" target="_blank" rel="noopener">Luogu</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>时间单向流逝,所以可以直接按时间倒序DP,每一秒有三种决策:上左边的车,上右边的车,等车,从中取最小值.</p>
+<p>关于实现,可以简单地预处理出每秒有没有车.</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;climits&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">1</span>,ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* code */</span></span><br><span class="line">        c = getchar();</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">    &#125; <span class="keyword">while</span> (c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* code */</span></span><br><span class="line">        ans = (ans &lt;&lt; <span class="number">3</span>) + (ans &lt;&lt; <span class="number">1</span>) + c - <span class="string">'0'</span>;</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125; <span class="keyword">while</span> (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>);</span><br><span class="line">    <span class="keyword">return</span> f * ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">200</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXT = <span class="number">200</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> time[N];</span><br><span class="line"><span class="keyword">int</span> train[MAXT][N][<span class="number">2</span>];<span class="comment">//t时刻i站是否有向左/右的车</span></span><br><span class="line"><span class="keyword">int</span> dp[MAXT][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,M1,M2,T,kase = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n = read())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">        <span class="built_in">memset</span>(time,<span class="number">0</span>,<span class="keyword">sizeof</span>(time));</span><br><span class="line">        <span class="built_in">memset</span>(train,<span class="number">0</span>,<span class="keyword">sizeof</span>(train));</span><br><span class="line">        T = read();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            time[i] = read();</span><br><span class="line">        &#125;</span><br><span class="line">        M1 = read();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= M1;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> t = read();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>;j &lt; n;j ++)</span><br><span class="line">            &#123;</span><br><span class="line">                train[t][j][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">                t += time[j];    </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        M2 = read();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= M2;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> t =read();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = n - <span class="number">1</span>;j &gt; <span class="number">0</span>;j --)</span><br><span class="line">            &#123;</span><br><span class="line">                train[t][j + <span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                t += time[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[T][i] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        dp[T][n] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = T - <span class="number">1</span>;i &gt;= <span class="number">0</span>;i --)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j &lt;= n;j ++)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[i][j] = dp[i+<span class="number">1</span>][j] + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(j &lt; n &amp;&amp; train[i][j][<span class="number">0</span>] &amp;&amp; i + time[j] &lt;= T)</span><br><span class="line">                    dp[i][j] = <span class="built_in">std</span>::min(dp[i][j],dp[i+time[j]][j+<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(j &gt; <span class="number">1</span> &amp;&amp; train[i][j][<span class="number">1</span>] &amp;&amp; i + time[j<span class="number">-1</span>] &lt;= T)</span><br><span class="line">                    dp[i][j] = <span class="built_in">std</span>::min(dp[i][j],dp[i+time[j<span class="number">-1</span>]][j<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case Number %d: "</span>, ++ kase);</span><br><span class="line">        <span class="keyword">if</span>(dp[<span class="number">0</span>][<span class="number">1</span>] &gt;= <span class="number">0x3f3f3f3f</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"impossible\n"</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[<span class="number">0</span>][<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -517,7 +520,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -563,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
@@ -597,7 +600,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.2k</span>
+    <span title="Site words total count">15.9k</span>
   
 </div>
 
